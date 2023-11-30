@@ -3,6 +3,8 @@
 //Variables
 //Storing coordinations
 let x1, y1, x2, y2;
+//Is pressing shift key
+let isShift = false;
 
 class DrawingCircle extends PaintFunction {
     constructor (contextReal, contextDraft) {
@@ -32,28 +34,59 @@ class DrawingCircle extends PaintFunction {
             0,
             canvasDraft.width,
             canvasDraft.height
-        );
-        //Actually draw the circle
-        this.contextDraft.beginPath();
-        x2 = coord[0];
-        y2 = coord[1];
-        this.contextDraft.arc(
-            x1,
-            y1,
-            Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
-            0,
-            Math.PI * 2
-        );
-        this.contextDraft.fill();
-        this.contextDraft.beginPath();
-        this.contextDraft.arc(
-            x1,
-            y1,
-            Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
-            0,
-            Math.PI * 2
-        );
-        this.contextDraft.stroke();
+            );
+
+        //If pressing shift, draw circle
+        if(isShift === true){
+            //Actually draw the circle
+            this.contextDraft.beginPath();
+            x2 = coord[0];
+            y2 = coord[1];
+            this.contextDraft.arc(
+                x1,
+                y1,
+                Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
+                0,
+                Math.PI * 2
+            );
+            this.contextDraft.fill();
+            this.contextDraft.beginPath();
+            this.contextDraft.arc(
+                x1,
+                y1,
+                Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
+                0,
+                Math.PI * 2
+            );
+            this.contextDraft.stroke();
+        } else {
+            //if not pressing shift, draw eclipse
+            //Actually draw the circle
+            this.contextDraft.beginPath();
+            x2 = coord[0];
+            y2 = coord[1];
+            this.contextDraft.ellipse(
+                x1,
+                y1,
+                radiusX(x1, x2),
+                radiusY(y1, y2),
+                0,
+                0,
+                Math.PI * 2
+            );
+            this.contextDraft.fill();
+            this.contextDraft.beginPath();
+            this.contextDraft.ellipse(
+                x1,
+                y1,
+                radiusX(x1, x2),
+                radiusY(y1, y2),
+                0,
+                0,
+                Math.PI * 2
+            );
+            this.contextDraft.stroke();
+        }
     }
 
     onMouseUp(coord, event) {
@@ -68,6 +101,9 @@ class DrawingCircle extends PaintFunction {
             canvasReal.width,
             canvasReal.height
         );
+
+        //If pressing shift, draw circle
+        if(isShift === true){
         //Actually draw the circle
         this.contextReal.beginPath();
         this.contextReal.arc(
@@ -87,6 +123,34 @@ class DrawingCircle extends PaintFunction {
             Math.PI * 2
         );
         this.contextReal.stroke();
+    } else {
+        //if not pressing shift, draw eclipse
+            //Actually draw the circle
+            this.contextReal.beginPath();
+            x2 = coord[0];
+            y2 = coord[1];
+            this.contextReal.ellipse(
+                x1,
+                y1,
+                radiusX(x1, x2),
+                radiusY(y1, y2),
+                0,
+                0,
+                Math.PI * 2
+            );
+            this.contextReal.fill();
+            this.contextReal.beginPath();
+            this.contextReal.ellipse(
+                x1,
+                y1,
+                radiusX(x1, x2),
+                radiusY(y1, y2),
+                0,
+                0,
+                Math.PI * 2
+            );
+            this.contextReal.stroke();
+        }
     }
 }
 
@@ -107,3 +171,16 @@ function radiusY(y1, y2){
         return y2 - y1;
     }
 }
+
+//Check if user is pressing shift key
+$('body').keydown(function(e){
+    if(e.keyCode === 16){
+        isShift = true;
+    }
+})
+
+$('body').keyup(function(e){
+    if(e.keyCode === 16){
+        isShift = false;
+    }
+})
