@@ -1,11 +1,5 @@
 //Drawing circle function
 
-//Variables
-//Storing coordinations
-let x1, y1, x2, y2;
-//Is pressing shift key
-let isShift = false;
-
 class DrawingCircle extends PaintFunction {
     constructor (contextReal, contextDraft) {
         super();
@@ -17,17 +11,17 @@ class DrawingCircle extends PaintFunction {
         //Style of stroke and fill
         this.contextReal.lineWidth = 1;
         this.contextReal.strokeStyle = "black";
-        this.contextReal.fillStyle = "grey";
+        this.contextReal.fillStyle = "white";
         //Original coordination
-        x1 = coord[0];
-        y1 = coord[1];
+        this.x1 = coord[0];
+        this.y1 = coord[1];
     }
 
     onDragging(coord, event) {
         //Style of stroke and fill (draft)
         this.contextDraft.lineWidth = 1;
         this.contextDraft.strokeStyle = "black";
-        this.contextDraft.fillStyle = "grey";
+        this.contextDraft.fillStyle = "white";
         //Clear draft
         this.contextDraft.clearRect(
             0,
@@ -37,39 +31,39 @@ class DrawingCircle extends PaintFunction {
             );
 
         //If pressing shift, draw circle
-        if(isShift === true){
+        if(isShift){
             //Actually draw the circle
             this.contextDraft.beginPath();
-            x2 = coord[0];
-            y2 = coord[1];
+            this.x2 = coord[0];
+            this.y2 = coord[1];
             this.contextDraft.arc(
-                x1,
-                y1,
-                Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
+                this.x1,
+                this.y1,
+                Math.sqrt(Math.pow((radiusX(this.x1, this.x2)), 2) + Math.pow((radiusY(this.y1, this.y2)), 2)),
                 0,
                 Math.PI * 2
             );
             this.contextDraft.fill();
             this.contextDraft.beginPath();
             this.contextDraft.arc(
-                x1,
-                y1,
-                Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
+                this.x1,
+                this.y1,
+                Math.sqrt(Math.pow((radiusX(this.x1, this.x2)), 2) + Math.pow((radiusY(this.y1, this.y2)), 2)),
                 0,
                 Math.PI * 2
             );
             this.contextDraft.stroke();
         } else {
-            //if not pressing shift, draw eclipse
-            //Actually draw the circle
+            //if not pressing shift, draw ellipse
+            //Actually draw the ellipse
             this.contextDraft.beginPath();
-            x2 = coord[0];
-            y2 = coord[1];
+            this.x2 = coord[0];
+            this.y2 = coord[1];
             this.contextDraft.ellipse(
-                x1,
-                y1,
-                radiusX(x1, x2),
-                radiusY(y1, y2),
+                this.x1,
+                this.y1,
+                radiusX(this.x1, this.x2),
+                radiusY(this.y1, this.y2),
                 0,
                 0,
                 Math.PI * 2
@@ -77,10 +71,10 @@ class DrawingCircle extends PaintFunction {
             this.contextDraft.fill();
             this.contextDraft.beginPath();
             this.contextDraft.ellipse(
-                x1,
-                y1,
-                radiusX(x1, x2),
-                radiusY(y1, y2),
+                this.x1,
+                this.y1,
+                radiusX(this.x1, this.x2),
+                radiusY(this.y1, this.y2),
                 0,
                 0,
                 Math.PI * 2
@@ -90,10 +84,10 @@ class DrawingCircle extends PaintFunction {
     }
 
     onMouseUp(coord, event) {
-        //Style of stroke and fill (draft)
+        //Style of stroke and fill (real)
         this.contextReal.lineWidth = 1;
         this.contextReal.strokeStyle = "black";
-        this.contextReal.fillStyle = "grey";
+        this.contextReal.fillStyle = "white";
         //Clear Draft
         this.contextDraft.clearRect(
             0,
@@ -103,37 +97,37 @@ class DrawingCircle extends PaintFunction {
         );
 
         //If pressing shift, draw circle
-        if(isShift === true){
+        if(isShift){
         //Actually draw the circle
         this.contextReal.beginPath();
         this.contextReal.arc(
-            x1,
-            y1,
-            Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
+            this.x1,
+            this.y1,
+            Math.sqrt(Math.pow((radiusX(this.x1, this.x2)), 2) + Math.pow((radiusY(this.y1, this.y2)), 2)),
             0,
             Math.PI * 2
         );
         this.contextReal.fill();
         this.contextReal.beginPath();
         this.contextReal.arc(
-            x1,
-            y1,
-            Math.sqrt(Math.pow((radiusX(x1, x2)), 2) + Math.pow((radiusY(y1, y2)), 2)),
+            this.x1,
+            this.y1,
+            Math.sqrt(Math.pow((radiusX(this.x1, this.x2)), 2) + Math.pow((radiusY(this.y1, this.y2)), 2)),
             0,
             Math.PI * 2
         );
         this.contextReal.stroke();
     } else {
-        //if not pressing shift, draw eclipse
-            //Actually draw the circle
+        //if not pressing shift, draw ellipse
+            //Actually draw the ellipse
             this.contextReal.beginPath();
-            x2 = coord[0];
-            y2 = coord[1];
+            this.x2 = coord[0];
+            this.y2 = coord[1];
             this.contextReal.ellipse(
-                x1,
-                y1,
-                radiusX(x1, x2),
-                radiusY(y1, y2),
+                this.x1,
+                this.y1,
+                radiusX(this.x1, this.x2),
+                radiusY(this.y1, this.y2),
                 0,
                 0,
                 Math.PI * 2
@@ -141,10 +135,10 @@ class DrawingCircle extends PaintFunction {
             this.contextReal.fill();
             this.contextReal.beginPath();
             this.contextReal.ellipse(
-                x1,
-                y1,
-                radiusX(x1, x2),
-                radiusY(y1, y2),
+                this.x1,
+                this.y1,
+                radiusX(this.x1, this.x2),
+                radiusY(this.y1, this.y2),
                 0,
                 0,
                 Math.PI * 2
