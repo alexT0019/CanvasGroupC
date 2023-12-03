@@ -5,9 +5,6 @@
  ***********************************************/
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
 
-//Variables
-let isShift = false;
-
 class DrawingRectangle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
