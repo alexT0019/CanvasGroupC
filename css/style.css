@@ -16,3 +16,9 @@ body {
 #canvas-container {
   height: 720px;
 }
+
+#upload-image {
+  opacity: 0;
+  height: 15px;
+  width: 10px;
+}
