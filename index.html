@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <!-- font google-->
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Press+Start+2P&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+
+    <!--header-->
+    <header>
+      <h1>
+        Painting wo<span id="flashing-text">R</span>kshop
+      </h1>
+    </header>
+
+     <!--left-menu-->
+    <div class="container">
+    <div class="menu">
+      <button id="save-button" class="function-btn left-button"><span class="material-symbols-outlined" style="font-size: 50px";>save</span></button>
+      <button id="upload-button" class="function-btn left-button"><span class="material-symbols-outlined" style="font-size: 50px";>upload</span></button>
+      <button id="delete-button" class="function-btn left-button"><span class="material-symbols-outlined" style="font-size: 50px";>delete</span></button>
+    </div>
+
+  <!--center canvas-container-->
+  <div class="container" id="canvas">
+    <canvas id="canvas-real" width="1000" height="600"></canvas>
+    <canvas id="canvas-draft" width="1000" height="600"></canvas>
+  </div>
+
+
+  <!--right handsize-sidebar-->
+    <div class="sidebar">
+      <button id="color-text-button" class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px";>format_color_text</span></button>
+      <button id="color-fill-button"class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px":>format_color_fill</span></button>
+      <button id="line-weight-button" class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px";>line_weight</span></button>
+    </div>
+  </div>
+
+  <!--footer-->
+  <div class="footer">
+    <div class="circle">
+        <button class="curved-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">line_curve</span></button>
+        <button class="straight-button"><span class="material-symbols-outlined" style="font-size: 30px">gesture</span></button>
+        <button class="rectangle-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">rectangle</span></button>
+        <button class="circle-button"><span class="material-symbols-outlined" style="font-size: 30px">circle</span></button>
+    </div>
+
+    <div class="circle">
+        <button class="brush-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">brush</span></button>
+        <button class="draw-button"><span class="material-symbols-outlined" style="font-size: 30px">draw</button>
+        <button class="eraser-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">ink_eraser</span></button>
+        <button class="sub-button"><span class="material-symbols-outlined" style="font-size: 30px">palette</span></button>
+    </div>
+
+    <div class="circle color-button">
+        <button class="color-button" id="left-element" style="background-color: red;"></button>
+        <button class="color-button" style="background-color: green;"></button>
+        <button class="color-button" id="left-element" style="background-color: blue;"></button>
+        <button class="color-button" style="background-color: yellow;"></button>
+    </div>
+
+    <div class="circle">
+        <button class="restart-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">restart_alt</span></i></button>
+        <button class="undo-button"><span class="material-symbols-outlined" style="font-size: 30px">undo</span></i></button>
+        <button class="cancel-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">cancel</span></button>
+        <button class="sub-button"></button>
+    </div>
+
+  </div>
+</body>
+</html>
+
+    <div class="buttons">
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+      <!-- The random color R functionality  -->
+      <script src="/js/random-color.js"></script>
+      <!-- The drawing functionality  -->
+      <script src="./js/canvas-common.js" type="text/javascript"></script>
+      <!-- The drawing line functionality  -->
+      <script src="./js/drawing-line.js" type="text/javascript"></script>
+      <!-- The drawing rectangle functionality  -->
+      <script src="./js/drawing-rectangle.js" type="text/javascript"></script>
+      <script src="./js/drawing-circle.js" type="text/javascript"></script>
+      <!-- The save-canvas functionality  -->
+      <script src="./js/save-canvas.js" type="text/javascript"></script>
+      <!-- The upload-image functionality  -->
+      <script src="./js/upload-image.js" type="text/javascript"></script>
+      <!-- The delete-canvas functionality  -->
+      <script src="./js/delete-canvas.js" type="text/javascript"></script>
+      <!-- The straight line functionality  -->
+      <script src="./js/drawing-straight.js" type="text/javascript"></script>
+      <!-- The curve line functionality  -->
+      <script src="./js/drawing-curved.js" type="text/javascript"></script>
+      <!-- The eraser functionality  -->
+      <script src="./js/eraser.js" type="text/javascript"></script>
+
+…
+
+      <script type="text/javascript">
+      $(()=>{
+        currentFunction =  new DrawingLine(contextReal)
+      //circle 1
+      //Pat function missing
+        $(".curved-button").click(() => {
+          currentFunction = new DrawingCurved(contextReal, contextDraft);
+        });  
+        $(".straight-button").click(() => {
+          currentFunction = new DrawingStraight(contextReal, contextDraft);
+        });  
+        $(".rectangle-button").click(() => {
+          currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $(".circle-button").click(() => {
+          currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });  
+      //circle 2
+        $(".draw-button").click(() => {
+          currentFunction = new DrawingLine(contextReal);
+        });  
+        $(".eraser-button").click(() => {
+          currentFunction = new Eraser(contextReal, contextDraft);
+        }); 
+      //circle 3 change color
+      //circle 4 redo delete
+      })
+    </script>
+  </body>
+</html>
