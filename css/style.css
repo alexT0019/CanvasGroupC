@@ -1,4 +1,4 @@
-.canvas {
+/* .canvas {
   border: 1px black dotted;
   position: absolute;
   top: 0px;
@@ -15,4 +15,175 @@ body {
 }
 #canvas-container {
   height: 720px;
+} */
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "consolas", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: url("/image/stars-1436950_1280.jpg");
+  background-position: center;
+  padding: 20px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+header h1 {
+  color: whitesmoke;
+  font-size: 30px;
+  margin: 0;
+  font-family: "press Start 2P";
+  text-transform: uppercase;
+  text-shadow: 1px 1px 8px yellow;
+  
+}
+
+@keyframes flashing {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 2; }
+}
+
+#flashing-text {
+  animation: flashing 2s infinite;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+.menu{
+  background-image: url("/image/stars-1436950_1280.jpg");
+  background-position: left;
+  width: 100px;
+  padding: 30px;
+  opacity: 0.7;
+}
+
+
+.function-btn{
+  color: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
+  border: 7px solid purple; 
+  border-radius: 35%;
+  border-style: outset;
+  width: 80px;
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.function-btn:hover {
+  transform: scale(1.2);
+  /* border: 2px solid darkmagenta; */
+  border: 2px solid darkmagenta;
+  box-shadow: 0 0 10px 1px yellow;
+}
+
+
+.left-button {
+  margin-right: 15px;
+}
+
+#canvas {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#canvas-real{
+  /* color: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%); */
+  justify-content: center;
+  position: absolute;
+  border: 5px solid purple;
+  border-radius: 10%;
+
+}
+
+#canvas-draft{
+  /* color: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%); */
+  justify-content: center;
+  position: absolute;
+  border: 5px solid purple;
+  border-radius: 10%;
+
+}
+
+.sidebar {
+  background-image: url("/image/stars-1436950_1280.jpg");
+  background-position: right;
+  width: 100px;
+  padding: 30px;
+}
+
+.right-button{
+  margin-left: 15px;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-image: url("/image/stars-1436950_1280.jpg");
+  background-position: bottom;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(45, 44, 44);
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);;
+  border: 9px solid purple;
+  border-radius: 35%;
+  border-style: outset;
+}
+
+.circle button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-family: "consolas", "sans-serif";
+  cursor: pointer;
+  position: relative;
+  display: flex auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 2px solid darkmagenta;
+}
+
+.circle button:hover {
+  transform: scale(1.8);
+  box-shadow: 0 0 10px 1px yellow;
+}
+
+#left-element:hover {
+  position: relative;
+  z-index: 2; /* set the higher level than right button when using hover function */
+}
+
+.undo-button{
+  transform: rotate(180deg)
 }
