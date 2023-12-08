@@ -18,14 +18,22 @@ Click and drag to draw dots and lines.
 # Eraser
 Click and drag to clear the path.
 # Lines
-
+- Straight line<br>
+Drag to draw straight line.
+- Curved line<br>
+Drag to draw straight line, drag again to control the curve point.
 # Shapes
 - Circle<br>
 Drag to draw ellipse, press shift and drag to draw circle.
 - Rectangle<br>
 Drag to draw rectangle, press shift and drag to draw square.
 # Stroke width, stroke and fill colour select
-
+-Stroke width<br>
+Click the button, adjust with the slide. Left for smaller, right for larger.
+-Stroke, fill colour<br>
+Click the button to toggle colour picker.
+# Default colour select
+Click on the colour buttons to change the stroke colour to respective colour (red, green, blue, yellow).
 # Save and delete canvas
 - Save<br>
 Click the save button, the canvas will be saved as 'untitled.jpeg' to the default download path of your own disc.
