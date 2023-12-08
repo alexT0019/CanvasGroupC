@@ -4,6 +4,10 @@ class DrawingCurved extends PaintFunction {
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
         this.counter = 0;
+        this.contextDraft.lineWidth = lineWidthInput.value;
+        this.contextDraft.strokeStyle = strokeColorInput.value;
+        this.contextReal.lineWidth = lineWidthInput.value;
+        this.contextReal.strokeStyle = strokeColorInput.value;
     }
 
 

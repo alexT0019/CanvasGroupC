@@ -26,7 +26,7 @@ body {
 }
 
 header {
-  background-image: url("/image/stars-1436950_1280.jpg");
+  background-image: url("./image/stars-1436950_1280.jpg");
   background-position: center;
   padding: 20px;
   text-align: center;
@@ -59,7 +59,7 @@ header h1 {
 }
 
 .menu{
-  background-image: url("/image/stars-1436950_1280.jpg");
+  background-image: url("./image/stars-1436950_1280.jpg");
   background-position: left;
   width: 100px;
   padding: 30px;
@@ -121,7 +121,7 @@ header h1 {
 }
 
 .sidebar {
-  background-image: url("/image/stars-1436950_1280.jpg");
+  background-image: url("./image/stars-1436950_1280.jpg");
   background-position: right;
   width: 100px;
   padding: 30px;
@@ -136,7 +136,7 @@ header h1 {
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
-  background-image: url("/image/stars-1436950_1280.jpg");
+  background-image: url("./image/stars-1436950_1280.jpg");
   background-position: bottom;
 }
 
@@ -186,4 +186,39 @@ header h1 {
 
 .undo-button{
   transform: rotate(180deg)
+}
+
+/*Hide the input styles and replace with button styles*/
+#upload-image{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 30px;
+  opacity: 0;
+}
+
+#strokeColor{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  left: 5px;
+  opacity: 0;
+}
+
+#fillColor{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  right: 20px;
+  opacity: 0;
+}
+
+#lineWidth{
+  position: absolute;
+  right: 10px;
+
+}
+
+#lineWidth :hover{
+  opacity: 1;
 }

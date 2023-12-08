@@ -11,6 +11,11 @@ let currentFunction;
 let dragging = false;
 let isShift = false;
 
+let lineWidthInput = document.getElementById("lineWidth");
+let strokeColorInput = document.getElementById("strokeColor");
+let fillColorInput = document.getElementById("fillColor");
+
+
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
@@ -47,18 +52,6 @@ $("#canvas-draft").mouseenter(function (e) {
   currentFunction.onMouseEnter([mouseX, mouseY], e);
 });
 
-// //Update the line width when the input changes
-// lineWidthInput.addEventListener("input",function(){
-//   currentFunction.lineWidth = lineWidthInput.value;
-// })
-// //Update the stroke color when the input changes
-// strokeColorInput.addEventListener("input",function(){
-//   currentFunction.strokeStyle = strokeColorInput.value;
-// })
-// //Update the fill color when the input changes
-// fillColorInput.addEventListener("input",function(){
-//   currentFunction.fillStyle = fillColorInput.value;
-// })
 
 /** # Class (all classes will have these methods) #
 /*  ====================== */

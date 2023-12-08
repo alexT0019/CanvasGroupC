@@ -9,9 +9,9 @@ class DrawingCircle extends PaintFunction {
 
     onMouseDown(coord, event) {
         //Style of stroke and fill
-        this.contextReal.lineWidth = 1;
-        this.contextReal.strokeStyle = "black";
-        this.contextReal.fillStyle = "white";
+        this.contextDraft.lineWidth = lineWidthInput.value;
+        this.contextDraft.strokeStyle = strokeColorInput.value;
+        this.contextDraft.fillStyle = fillColorInput.value;
         //Original coordination
         this.x1 = coord[0];
         this.y1 = coord[1];
@@ -19,9 +19,9 @@ class DrawingCircle extends PaintFunction {
 
     onDragging(coord, event) {
         //Style of stroke and fill (draft)
-        this.contextDraft.lineWidth = 1;
-        this.contextDraft.strokeStyle = "black";
-        this.contextDraft.fillStyle = "white";
+        this.contextDraft.lineWidth = lineWidthInput.value;
+        this.contextDraft.strokeStyle = strokeColorInput.value;
+        this.contextDraft.fillStyle = fillColorInput.value;
         //Clear draft
         this.contextDraft.clearRect(
             0,
@@ -85,9 +85,9 @@ class DrawingCircle extends PaintFunction {
 
     onMouseUp(coord, event) {
         //Style of stroke and fill (real)
-        this.contextReal.lineWidth = 1;
-        this.contextReal.strokeStyle = "black";
-        this.contextReal.fillStyle = "white";
+        this.contextDraft.lineWidth = lineWidthInput.value;
+        this.contextDraft.strokeStyle = strokeColorInput.value;
+        this.contextDraft.fillStyle = fillColorInput.value;
         //Clear Draft
         this.contextDraft.clearRect(
             0,
