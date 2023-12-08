@@ -11,16 +11,15 @@ class DrawingLine extends PaintFunction {
     constructor(contextReal) {
       super();
       this.context = contextReal;
+      this.context.lineWidth = lineWidthInput.value;
+      this.context.strokeStyle = strokeColorInput.value;
     }
   
     // On mouse down, ensure that the pen has these features
     onMouseDown(coord, event) {
-      // Fill in the color
-      this.context.strokeStyle = "white";
       // Kind of line
       this.context.lineJoin = "round";
-      // Width of line
-      this.context.lineWidth = 5;
+
       // Drawing the line here
       this.context.beginPath();
       this.context.moveTo(coord[0], coord[1]);

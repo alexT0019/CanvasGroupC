@@ -216,9 +216,5 @@ header h1 {
 #lineWidth{
   position: absolute;
   right: 10px;
-
-}
-
-#lineWidth :hover{
-  opacity: 1;
+  top: 450px;
 }

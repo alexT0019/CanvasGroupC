@@ -39,8 +39,9 @@
   <!--right handsize-sidebar-->
     <div class="sidebar">
       <button id="color-text-button" class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px";>format_color_text</span></button>
-      <button id="color-fill-button"class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px":>format_color_fill<input type="color" id="fillColor" value="#f44444"></span></button>
-      <button id="line-weight-button" class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px";>line_weight<input type="range" id="lineWidth" min="1" max="20" value="5"></span></button>
+      <button id="color-fill-button"class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px":>format_color_fill<input type="color" id="fillColor" value="#FFFFFF"></span></button>
+      <button id="line-weight-button" class="function-btn right-button"><span class="material-symbols-outlined" style="font-size: 50px";>line_weight</span></button>
+      <input type="range" id="lineWidth" min="1" max="20" value="5">
     </div>
   </div>
 
@@ -57,14 +58,14 @@
         <button class="brush-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">brush</span></button>
         <button class="draw-button"><span class="material-symbols-outlined" style="font-size: 30px">draw</button>
         <button class="eraser-button" id="left-element"><span class="material-symbols-outlined" style="font-size: 30px">ink_eraser</span></button>
-        <button class="sub-button"><span class="material-symbols-outlined" style="font-size: 30px">palette<input type="color" id="strokeColor" value="#df4b26"></span></button>
+        <button class="sub-button"><span class="material-symbols-outlined" style="font-size: 30px">palette<input type="color" id="strokeColor" value="#FFFFFF"></span></button>
     </div>
 
     <div class="circle color-button">
-        <button class="color-button" id="left-element" style="background-color: red;"></button>
-        <button class="color-button" style="background-color: green;"></button>
-        <button class="color-button" id="left-element" style="background-color: blue;"></button>
-        <button class="color-button" style="background-color: yellow;"></button>
+        <button class="color-button red-button" id="left-element" style="background-color: red;"></button>
+        <button class="color-button green-button" style="background-color: green;"></button>
+        <button class="color-button blue-button" id="left-element" style="background-color: blue;"></button>
+        <button class="color-button yellow-button" style="background-color: yellow;"></button>
     </div>
 
     <div class="circle">
@@ -103,8 +104,13 @@
       <script src="./js/drawing-curved.js" type="text/javascript"></script>
       <!-- The eraser functionality  -->
       <script src="./js/eraser.js" type="text/javascript"></script>
-
-…
+      <!-- The default colour functionality  -->
+      <script src="./js/red-button.js" type="text/javascript"></script>
+      <script src="./js/green-button.js" type="text/javascript"></script>
+      <script src="./js/blue-button.js" type="text/javascript"></script>
+      <script src="./js/yellow-button.js" type="text/javascript"></script>
+      <!-- The stroke width functionality  -->
+      <script src="./js/line-weight-button.js" type="text/javascript"></script>
 
       <script type="text/javascript">
       $(()=>{
