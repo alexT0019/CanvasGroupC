@@ -28,9 +28,9 @@ Drag to draw ellipse, press shift and drag to draw circle.
 - Rectangle<br>
 Drag to draw rectangle, press shift and drag to draw square.
 # Stroke width, stroke and fill colour select
--Stroke width<br>
+- Stroke width<br>
 Click the button, adjust with the slide. Left for smaller, right for larger.
--Stroke, fill colour<br>
+- Stroke, fill colour<br>
 Click the button to toggle colour picker.
 # Default colour select
 Click on the colour buttons to change the stroke colour to respective colour (red, green, blue, yellow).
