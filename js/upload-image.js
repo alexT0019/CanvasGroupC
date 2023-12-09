@@ -3,7 +3,6 @@ let uploadImageBtn = document.getElementById('upload-button');
     
     
 function uploadImage(){
-    console.log("1");
     let canvasReal = document.getElementById("canvas-real");
     let contextReal = canvasReal.getContext("2d");
     let reader = new FileReader();
