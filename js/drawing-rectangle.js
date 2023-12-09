@@ -10,23 +10,23 @@ class DrawingRectangle extends PaintFunction {
       super();
       this.contextReal = contextReal;
       this.contextDraft = contextDraft;
-    }
-  
-    onMouseDown(coord, event) {
-      //Style of stroke and fill
+      //Style of stroke and fill (draft)
+      this.contextDraft.lineWidth = lineWidthInput.value;
+      this.contextDraft.strokeStyle = strokeColorInput.value;
+      this.contextDraft.fillStyle = fillColorInput.value;
+      //Style of stroke and fill (real)
       this.contextReal.lineWidth = lineWidthInput.value;
       this.contextReal.strokeStyle = strokeColorInput.value;
       this.contextReal.fillStyle = fillColorInput.value;
+    }
+  
+    onMouseDown(coord, event) {
       //Original coordination
       this.x1 = coord[0];
       this.y1 = coord[1];
     }
   
     onDragging(coord, event) {
-      //Style of stroke and fill (draft)
-      this.contextDraft.lineWidth = lineWidthInput.value;
-      this.contextDraft.strokeStyle = strokeColorInput.value;
-      this.contextDraft.fillStyle = fillColorInput.value;
       // Clear draft
       this.contextDraft.clearRect(
         0,
@@ -78,10 +78,6 @@ class DrawingRectangle extends PaintFunction {
   
     // Committing the element to the canvas
     onMouseUp(coord) {
-      //Style of stroke and fill (real)
-      this.contextReal.lineWidth = lineWidthInput.value;
-      this.contextReal.strokeStyle = strokeColorInput.value;
-      this.contextReal.fillStyle = fillColorInput.value;
       // Clear draft
       this.contextDraft.clearRect(
         0,
