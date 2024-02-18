@@ -1,7 +1,7 @@
 # Canvas Project Group C
 Hello, we are group C and this is our canvas project.
 # How it works
-Please visit our website at https://alext0019.github.io/CanvasGroupC/
+Please visit our website at https://alext0019.github.io/CanvasGroupC/<br>
 Press the buttons, click and drag on the canvas to create your artwork!
 You may save or delete the artwork created.
 Please read the function list and functions below to learn to use.
